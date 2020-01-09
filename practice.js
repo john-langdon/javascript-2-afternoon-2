@@ -17,8 +17,10 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-//Code Here
-
+function first(arr){
+  return arr[0]
+}
+first(arr)
 
 
 ////////// PROBLEM 2 //////////
@@ -32,7 +34,10 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
+function last(arr){
+  return arr[2]
+}
+last(arr)
 
 
 
@@ -47,7 +52,13 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
+function looper(family){
+  for (var i = 0; i < family.length; i++){
+    alert(family[i])
+  }
+  console.log(family)
+}
+looper(family)
 
 
 
@@ -62,8 +73,14 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop backwards, starting at the end of the letters array, alerting every item in the array.
 */
 
-//Code Here
+function reversedLooper(letters){
+  for (var i = letters.length - 1; i>=0; i--){
+    alert(letters[i])
+    console.log(letters[i])
+  }
 
+}
+reversedLooper(letters)
 
 
 ////////// PROBLEM 5 //////////
@@ -77,13 +94,16 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return an array that contains the even numbers from the nums array.
 */
 
-//Code Here
+function evenFinder(nums){
+  for (var i = 0; i < nums.length; i++){
+    if (nums[i] % 2 !==0){
+      delete nums[i];
+    }
+  }
+  return nums
+}
 
-
-
-
-
-
+evenFinder(nums)
 
 /////////////////////// EXTRA PRACTICE PROBLEMS BELOW ////////////////////
 ////////// MOVE ONTO NEXT SECTION BEFORE WORKING ON THESE ////////////////
@@ -106,7 +126,17 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider(numbersArray){
+  let evenNumsOddNums = [[],[]]
+    for (var i = 0; i < numbersArray.length; i++){
+    if (numbersArray[i] % 2 === 0){
+    evenNumsOddNums[0].push(numbersArray[i])
+  } else {
+  evenNumsOddNums[1].push(numbersArray[i])
+  }
+}
+return evenNumsOddNums;
+}
 
 
 
@@ -128,8 +158,12 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
-
+function finder(arr){
+  var randomNumber = getRandomArbitrary()
+  console.log(randomNumber)
+  for (x in arr) {
+  }
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -157,8 +191,18 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
+function removeItem(list,remove){
+  for(i=0;i<list.length;i++){
+    if(list[i]===remove){
+      list.splice(i,1)
+    }
+
+  } return list
+}
+
+removeItem(myGroceryList, 'pizza')
 
 
 ////////// PROBLEM 9 //////////
@@ -167,9 +211,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
-
-
+function maker() {
+  var myArray = [];
+  for (var i = 0; i < 215; i++) {
+    myArray[i] = i + 1;
+  }
+  return myArray;
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -180,12 +228,18 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 /*
   Write a function called addTen that is given 'numbers' as it's only argument.
   Return a new array after adding ten to each item in numbers. 
-  Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
+  Your output should
+   look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
-  
-//Code Here
 
-
+function addTen(numbers){
+  newNumbers = [];
+  for (i=0;i<numbers.length;i++){
+  newNumbers.push(Number(numbers[i])+10);
+  }
+  return newNumbers;
+  }
+  addTen(numbers)
 
 ////////// PROBLEM 11 //////////
 
@@ -208,8 +262,10 @@ for(var i = 0; i < num2; i++){
   Return the longer of the two arrays.
 */
 
-//Code Here
-
+function longer(arr1,arr2){
+  if (arr1.lenth > arr2.length)
+return arr1;
+}
 
 
 /*
@@ -261,7 +317,8 @@ var colt = {
   After that, console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log(devMountainEmployees.length);
 
 
 
@@ -270,7 +327,13 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+devMountainEmployees.forEach(function(element, index, array){
+  if (element.name === "Cahlan") {
+  	array.splice(index,1);
+  }
+})
+
+devMountainEmployees
 
 
 
